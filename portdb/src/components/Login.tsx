@@ -7,19 +7,19 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
+const handleLogin = (e: React.FormEvent) => {
+  e.preventDefault();
 
-    const adminEmail = "admin@kevin.com";
-    const adminPassword = "password123";
+  const adminEmail = import.meta.env.VITE_ADMIN_EMAIL;
+  const adminPassword = import.meta.env.VITE_ADMIN_PASSWORD;
 
-    if (email === adminEmail && password === adminPassword) {
-      sessionStorage.setItem('isLoggedIn', 'true');
-      navigate('/dashboard');
-    } else {
-      alert("Invalid email or password. Please try again!");
-    }
-  };
+  if (email === adminEmail && password === adminPassword) {
+    sessionStorage.setItem('isLoggedIn', 'true');
+    navigate('/dashboard');
+  } else {
+    alert("Invalid email or password. Please try again!");
+  }
+};
 
   return (
     <Container className="d-flex align-items-center justify-content-center vh-100">
