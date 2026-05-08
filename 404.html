@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script>
-      const path = window.location.pathname;
-      const search = window.location.search;
-      sessionStorage.setItem('redirect', path + search);
-      window.location.replace('/portfolio/');
+    <meta charset="utf-8">
+    <script type="text/javascript">
+      // 1 segment if your repo is 'portfolio' (username.github.io/portfolio/)
+      var pathSegmentsToKeep = 1;
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?p=/' +
+        l.pathname.split('/').slice(1 + pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
     </script>
   </head>
   <body></body>
