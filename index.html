@@ -1,14 +1,23 @@
-<script type="text/javascript">
-  (function(l) {
-    if (l.search[1] === '/' ) {
-      var decoded = l.search.slice(1).split('&').map(function(s) { 
-        return s.replace(/~and~/g, '&') 
-      }).join('?');
-      
-      // Ensure we keep the 'portfolio' part of the path
-      window.history.replaceState(null, null,
-          l.pathname.slice(0, -1) + decoded + l.hash
-      );
-    }
-  }(window.location))
-</script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>portdb</title>
+    <script>
+      (function() {
+        var params = new URLSearchParams(window.location.search);
+        var p = params.get('p');
+        if (p) {
+          window.history.replaceState(null, '', '/portfolio' + p);
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/portfolio/assets/index-BEPIpc1V.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-8WK-o6tl.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
