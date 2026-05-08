@@ -1,6 +1,5 @@
 import React from 'react';
-// Changed BrowserRouter to HashRouter
-import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navigation from './components/NavBar';
 import Home from './components/Home';
 import About from './components/About';
@@ -16,11 +15,7 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
 
 function App() {
   return (
-    /* 
-       When using HashRouter, you generally do not need the 'basename' prop 
-       because the routing starts after the '#' symbol.
-    */
-    <Router>
+    <Router basename="/portfolio">
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -33,7 +28,6 @@ function App() {
             <Dashboard />
           </ProtectedRoute>
         } />
-        {/* Redirect any unknown hash routes to Home */}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
