@@ -13,7 +13,8 @@ const handleSubmit = async (e: React.FormEvent) => {
 
     try {
       // 1. Send email notification via EmailJS
-      await emailjs.send(
+      // Ensure these variable names match exactly what you saved in GitHub Secrets
+      const emailResponse = await emailjs.send(
         import.meta.env.VITE_EMAIL_SERVICE_ID,
         import.meta.env.VITE_EMAIL_TEMPLATE_ID,
         {
@@ -24,18 +25,27 @@ const handleSubmit = async (e: React.FormEvent) => {
         import.meta.env.VITE_EMAIL_PUBLIC_KEY
       );
 
+      if (emailResponse.status !== 200) {
+        throw new Error('EmailJS failed to send');
+      }
+
       // 2. Save message to MongoDB via Railway Backend
-      // Replaced localhost with your live Railway production URL
-      await fetch("https://portfolio-api-production-48fa.up.railway.app/api/contact", {
+      const dbResponse = await fetch("https://portfolio-api-production-48fa.up.railway.app/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
+      if (!dbResponse.ok) {
+        throw new Error('Database save failed');
+      }
+
       setStatus('success');
       setFormData({ name: '', email: '', message: '' });
-    } catch {
-      setErrorMsg('Failed to send. Please try again.');
+    } catch (err: any) {
+      console.error("Submission error:", err);
+      // Detailed error messages help during the BSIT development phase
+      setErrorMsg(err.text || 'Failed to send. Please check your connection or IDs.');
       setStatus('error');
     }
   };
