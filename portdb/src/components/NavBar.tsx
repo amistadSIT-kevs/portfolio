@@ -55,6 +55,18 @@ function NavBar() {
             >
               Contact
             </Nav.Link>
+            <Nav.Link
+            as={Link}
+            to="/login"
+            className="ms-2 px-3 py-1 rounded-2"
+            style={{
+              fontSize: 14,
+              color: '#fff',
+              border: '1px solid #444',
+            }}
+          >
+            Login
+          </Nav.Link>
 
           </Nav>
         </Navbar.Collapse>
