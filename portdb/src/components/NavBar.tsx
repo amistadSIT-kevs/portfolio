@@ -5,60 +5,95 @@ import { Link } from 'react-router-dom';
 
 function NavBar() {
   return (
-    <Navbar
-      expand="lg"
-      variant="dark"
-      className="py-3 sticky-top"
-      style={{ backgroundColor: '#111111', borderBottom: '1px solid #222' }}
-    >
-      <Container>
-        <Navbar.Brand
-          as={Link} 
-          to="/"   
-          className="fw-medium"
-          style={{
-            fontFamily: 'Georgia, serif',
-            fontSize: 16,
-            letterSpacing: '0.05em',
-            color: '#ffffff',
-          }}
-        >
-          My Portfolio
-        </Navbar.Brand>
+    <>
+      <style>
+        {`
+          .nav-link-custom {
+            transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+          }
+          
+          .nav-link-custom:hover {
+            color: #ffffff !important;
+          }
 
-        <Navbar.Toggle aria-controls="basic-navbar-nav" className="border-0" />
+          .contact-btn:hover {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+            border-color: #ffffff !important;
+          }
+        `}
+      </style>
 
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto align-items-lg-center gap-1">
+      <Navbar
+        expand="lg"
+        variant="dark"
+        className="py-3 sticky-top"
+        style={{ backgroundColor: '#111111', borderBottom: '1px solid #222' }}
+      >
+        <Container>
+          <Navbar.Brand
+            as={Link}
+            to="/"
+            className="fw-medium"
+            style={{
+              fontFamily: 'Georgia, serif',
+              fontSize: 16,
+              letterSpacing: '0.05em',
+              color: '#ffffff',
+            }}
+          >
+            My Portfolio
+          </Navbar.Brand>
 
-            <Nav.Link as={Link} to="/" style={{ fontSize: 14, color: '#ffffff' }}>
-              Home
-            </Nav.Link>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" className="border-0" />
 
-            <Nav.Link as={Link} to="/about" style={{ fontSize: 14, color: '#888' }}>
-              About
-            </Nav.Link>
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto align-items-lg-center gap-1">
+              
+              <Nav.Link 
+                as={Link} 
+                to="/" 
+                className="nav-link-custom"
+                style={{ fontSize: 14, color: '#ffffff' }}
+              >
+                Home
+              </Nav.Link>
 
-            <Nav.Link as={Link} to="/projects" style={{ fontSize: 14, color: '#888' }}>
-              Projects
-            </Nav.Link>
+              <Nav.Link 
+                as={Link} 
+                to="/about" 
+                className="nav-link-custom"
+                style={{ fontSize: 14, color: '#888' }}
+              >
+                About
+              </Nav.Link>
 
-            <Nav.Link
-              as={Link}
-              to="/contact"
-              className="ms-2 px-3 py-1 rounded-2"
-              style={{
-                fontSize: 14,
-                color: '#fff',
-                border: '1px solid #444',
-              }}
-            >
-              Contact
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+              <Nav.Link 
+                as={Link} 
+                to="/projects" 
+                className="nav-link-custom"
+                style={{ fontSize: 14, color: '#888' }}
+              >
+                Projects
+              </Nav.Link>
+
+              <Nav.Link
+                as={Link}
+                to="/contact"
+                className="nav-link-custom contact-btn ms-2 px-3 py-1 rounded-2"
+                style={{
+                  fontSize: 14,
+                  color: '#fff',
+                  border: '1px solid #444',
+                }}
+              >
+                Contact
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </>
   );
 }
 

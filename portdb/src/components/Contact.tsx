@@ -6,14 +6,13 @@ const Contact = () => {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
 
-const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
     setErrorMsg('');
 
     try {
       // 1. Send email notification via EmailJS
-      // Ensure these variable names match exactly what you saved in GitHub Secrets
       const emailResponse = await emailjs.send(
         import.meta.env.VITE_EMAIL_SERVICE_ID,
         import.meta.env.VITE_EMAIL_TEMPLATE_ID,
@@ -44,7 +43,6 @@ const handleSubmit = async (e: React.FormEvent) => {
       setFormData({ name: '', email: '', message: '' });
     } catch (err: any) {
       console.error("Submission error:", err);
-      // Detailed error messages help during the BSIT development phase
       setErrorMsg(err.text || 'Failed to send. Please check your connection or IDs.');
       setStatus('error');
     }
@@ -61,8 +59,11 @@ const handleSubmit = async (e: React.FormEvent) => {
           <h2 className="fw-normal mb-2" style={{ fontFamily: 'Georgia, serif', fontSize: 32, color: '#111' }}>
             Let's work together
           </h2>
+          
+          {/* Updated Description with Gmail */}
           <p className="mb-4" style={{ fontSize: 14, lineHeight: 1.7, color: '#666' }}>
-            Have a project in mind or just want to say hello? Fill out the form and I'll get back to you shortly.
+            Have a project in mind or just want to say hello? Fill out the form and I'll get back to you shortly. 
+            You can also reach me directly at <a href="mailto:amistadkevin2@gmail.com" style={{ color: '#111', fontWeight: 500, textDecoration: 'none', borderBottom: '1px solid #ccc' }}>amistadkevin2@gmail.com</a>.
           </p>
 
           {status === 'success' && (

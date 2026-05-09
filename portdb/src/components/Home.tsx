@@ -8,24 +8,47 @@ import kev from '../assets/kev.jpg';
 import background from '../assets/back.jpg';
 
 const Home = () => {
-const sectionStyle = {
-  backgroundImage: `url(${background})`,
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  minHeight: '100vh',
-  width: '100vw', 
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  margin: 0,
-  padding: 0
-};
+  const sectionStyle = {
+    backgroundImage: `url(${background})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    minHeight: '100vh',
+    width: '100vw', 
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 0,
+    padding: 0
+  };
 
   return (
     <section 
       style={sectionStyle}
       className="text-center text-white position-relative overflow-hidden"
     >
+      <style>
+        {`
+          /* Profile Image Hover */
+          .profile-img-hover {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.4s ease, box-shadow 0.4s ease;
+          }
+          .profile-img-hover:hover {
+            transform: scale(1.08) rotate(2deg);
+            border-color: #ffffff !important;
+            box-shadow: 0 0 25px rgba(255, 179, 93, 0.4) !important;
+          }
+
+          /* Button Hover Effects */
+          .btn-hover-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease !important;
+          }
+          .btn-hover-effect:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+          }
+        `}
+      </style>
+
       <div 
         className="position-absolute top-0 start-0 w-100 h-100" 
         style={{ 
@@ -43,7 +66,7 @@ const sectionStyle = {
                 src={kev} 
                 alt="Kevin Amistad"
                 roundedCircle
-                className="border border-2 border-secondary shadow-lg object-fit-cover"
+                className="profile-img-hover border border-2 border-secondary shadow-lg object-fit-cover"
                 style={{ width: '180px', height: '180px' }}
               />
             </div>
@@ -63,11 +86,23 @@ const sectionStyle = {
             </p>
 
             <div className="d-flex gap-3 justify-content-center">
-              <Button as={Link as any} to="/projects" variant="light" size="lg" className="rounded-pill px-4 fw-bold">
+              <Button 
+                as={Link as any} 
+                to="/projects" 
+                variant="light" 
+                size="lg" 
+                className="btn-hover-effect rounded-pill px-4 fw-bold"
+              >
                 View Projects
               </Button>
 
-              <Button as={Link as any} to="/contact" variant="outline-light" size="lg" className="rounded-pill px-4 fw-bold">
+              <Button 
+                as={Link as any} 
+                to="/contact" 
+                variant="outline-light" 
+                size="lg" 
+                className="btn-hover-effect rounded-pill px-4 fw-bold"
+              >
                 Contact Me
               </Button>
             </div>

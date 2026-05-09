@@ -1,3 +1,4 @@
+import Container from 'react-bootstrap/Container';
 
 interface IProject {
   _id: string;
@@ -39,10 +40,23 @@ const hardcodedProjects: IProject[] = [
   },
 ];
 
-const Project = () => {
+const Projects = () => {
   return (
-    <div className="container py-5">
-      {/* Header */}
+    <Container className="py-5">
+      <style>
+        {`
+          .project-card {
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+          }
+          
+          .project-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15) !important;
+            border-color: #000 !important;
+          }
+        `}
+      </style>
+
       <div className="mb-5">
         <p className="text-uppercase text-secondary mb-1" style={{ fontSize: 11, letterSpacing: '0.12em' }}>
           Portfolio
@@ -58,9 +72,8 @@ const Project = () => {
       <div className="row g-4">
         {hardcodedProjects.map((p) => (
           <div key={p._id} className="col-12 col-md-6 col-lg-4">
-            <div className="card h-100 border shadow-none rounded-3">
+            <div className="card h-100 border shadow-none rounded-3 project-card">
               <div className="card-body d-flex flex-column p-4">
-
                 <div className="d-flex justify-content-between align-items-start mb-3">
                   <h5 className="card-title fw-medium mb-0" style={{ fontSize: 16 }}>
                     {p.title}
@@ -75,7 +88,7 @@ const Project = () => {
                 </p>
 
                 <div className="d-flex flex-wrap gap-1 mb-4">
-                  {p.techStack.map((tech: string) => (
+                  {p.techStack.map((tech) => (
                     <span key={tech} className="badge bg-light text-secondary border" style={{ fontSize: 11 }}>
                       {tech}
                     </span>
@@ -83,33 +96,32 @@ const Project = () => {
                 </div>
 
                 <div className="d-flex gap-2 mt-auto">
-                  <a 
-                    href={p.repoLink} 
-                    target="_blank" 
-                    rel="noreferrer" 
-                    className="btn btn-outline-secondary btn-sm flex-fill"
-                  >
+                  <a href={p.repoLink} target="_blank" rel="noreferrer" className="btn btn-outline-secondary btn-sm flex-fill">
                     Source Code
                   </a>
                   {p.liveLink && (
-                    <a 
-                      href={p.liveLink} 
-                      target="_blank" 
-                      rel="noreferrer" 
-                      className="btn btn-dark btn-sm flex-fill"
-                    >
+                    <a href={p.liveLink} target="_blank" rel="noreferrer" className="btn btn-dark btn-sm flex-fill">
                       View Live →
                     </a>
                   )}
                 </div>
-
               </div>
             </div>
           </div>
         ))}
       </div>
-    </div>
+
+      {/* Footer / Coming Soon Section */}
+      <div className="mt-5 pt-5 text-center">
+        <div className="d-inline-block p-2 px-4 rounded-pill border bg-light">
+           <p className="text-secondary mb-0" style={{ fontSize: 13, letterSpacing: '0.02em' }}>
+            <span className="me-2"></span>
+            More projects and university activities will be added soon.
+          </p>
+        </div>
+      </div>
+    </Container>
   );
 };
 
-export default Project;
+export default Projects;
