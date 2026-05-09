@@ -12,7 +12,6 @@ const Contact = () => {
     setErrorMsg('');
 
     try {
-      // 1. Send email notification via EmailJS
       const emailResponse = await emailjs.send(
         import.meta.env.VITE_EMAIL_SERVICE_ID,
         import.meta.env.VITE_EMAIL_TEMPLATE_ID,
@@ -28,7 +27,6 @@ const Contact = () => {
         throw new Error('EmailJS failed to send');
       }
 
-      // 2. Save message to MongoDB via Railway Backend
       const dbResponse = await fetch("https://portfolio-api-production-48fa.up.railway.app/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

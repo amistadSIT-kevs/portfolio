@@ -5,7 +5,6 @@ const Dashboard = () => {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Use your live Railway production URL
   const API_URL = "https://portfolio-api-production-48fa.up.railway.app/api/contact";
 
   const fetchMessages = async () => {

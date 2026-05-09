@@ -31,6 +31,7 @@ const Home = () => {
           /* Profile Image Hover */
           .profile-img-hover {
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer; /* Indicates it's clickable */
           }
           .profile-img-hover:hover {
             transform: scale(1.08) rotate(2deg);
@@ -62,13 +63,16 @@ const Home = () => {
           <Col md={8} lg={6}>
             
             <div className="mb-4 text-center d-flex justify-content-center">
-              <Image 
-                src={kev} 
-                alt="Kevin Amistad"
-                roundedCircle
-                className="profile-img-hover border border-2 border-secondary shadow-lg object-fit-cover"
-                style={{ width: '180px', height: '180px' }}
-              />
+              {/* Wrapped Image in a Link */}
+              <Link to="/about">
+                <Image 
+                  src={kev} 
+                  alt="Kevin Amistad"
+                  roundedCircle
+                  className="profile-img-hover border border-2 border-secondary shadow-lg object-fit-cover"
+                  style={{ width: '180px', height: '180px' }}
+                />
+              </Link>
             </div>
 
             <h1 className="display-3 fw-bold mb-3">

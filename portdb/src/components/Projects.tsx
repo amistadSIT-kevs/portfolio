@@ -111,7 +111,6 @@ const Projects = () => {
         ))}
       </div>
 
-      {/* Footer / Coming Soon Section */}
       <div className="mt-5 pt-5 text-center">
         <div className="d-inline-block p-2 px-4 rounded-pill border bg-light">
            <p className="text-secondary mb-0" style={{ fontSize: 13, letterSpacing: '0.02em' }}>

@@ -1,4 +1,3 @@
-
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -18,23 +17,26 @@ const About = () => {
     {
       title: "AI Class ASEAN",
       issuer: "ASEAN Foundation",
-      detail: "AI fundamentals and applications in the ASEAN context.",
+      detail: "Comprehensive training on Artificial Intelligence fundamentals and applications within the ASEAN context.",
       link: "https://www.aiclassasean.org/profile?popup=0",
       image: aseanImg,
+      isPortrait: false, // Landscape
     },
     {
-      title: "Cisco Networking",
-      issuer: "Cisco Academy",
+      title: "Introduction to Networking",
+      issuer: "Cisco Networking Academy",
       detail: "Fundamental networking concepts and technologies.",
       link: "https://www.netacad.com/certificates/?issuanceId=225d8130-2070-4b60-a786-e8295aa54572",
       image: networkingImg,
+      isPortrait: false, // Landscape
     },
     {
-      title: "EFSET English",
-      issuer: "EF Standard",
+      title: "EFSET English Certificate",
+      issuer: "EF Standard English Test",
       detail: "Score: 76/100 — C2 Proficient (Advanced English).",
       link: "https://cert.efset.org/3QPXi5",
       image: efsetImg,
+      isPortrait: true, // Portrait
     }
   ];
 
@@ -44,32 +46,41 @@ const About = () => {
         {`
           .interactive-card {
             transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            background: white;
           }
+          
           .interactive-card:hover {
-            transform: translateY(-5px);
             border-color: #cdc9c1 !important;
             box-shadow: 0 10px 20px rgba(0,0,0,0.05) !important;
           }
 
-          .cert-container {
-            height: 180px;
+          /* Fixed the spacing issues for ASEAN/NetAcad */
+          .cert-expand-container {
+            width: 100%;
             overflow: hidden;
             border-radius: 6px;
-            margin-bottom: 15px;
-            background: #fdfdfd;
+            border: 1px solid #e5e1da;
+            transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-bottom: 20px;
+            background: #fff;
           }
 
-          .cert-image {
+          .frame-landscape { height: 160px; }
+          .interactive-card:hover .frame-landscape { height: 420px; }
+
+          .frame-portrait { height: 200px; }
+          .interactive-card:hover .frame-portrait { height: 600px; }
+
+          .cert-img-full {
             width: 100%;
-            height: 100%;
-            object-fit: contain;
-            filter: grayscale(20%);
-            transition: transform 0.5s ease;
+            height: auto;
+            display: block;
+            filter: grayscale(15%);
+            transition: filter 0.4s ease;
           }
 
-          .interactive-card:hover .cert-image {
+          .interactive-card:hover .cert-img-full {
             filter: grayscale(0%);
-            transform: scale(1.05);
           }
 
           .contact-pill {
@@ -92,21 +103,14 @@ const About = () => {
             background-color: #1a1814;
             color: white;
             border-color: #1a1814;
-            transform: scale(1.05);
-          }
-
-          .cert-link {
-            text-decoration: none;
-            color: inherit;
           }
         `}
       </style>
 
       <Container>
         <Row className="justify-content-center">
-          <Col lg={11} xl={10}>
+          <Col lg={10} xl={8}>
             
-            {/* Header Section */}
             <div className="mb-6">
               <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#928f85]">
               </span>
@@ -127,9 +131,15 @@ const About = () => {
               </div>
             </div>
 
-            <hr className="border-[#e5e1da] mb-12" />
+            <hr className="border-[#e5e1da] mb-10" />
 
-            {/* Technical Stack */}
+            <p className="text-[17px] text-[#5e5b54] leading-relaxed mb-12">
+              A dedicated <em>BSIT student at the University of Baguio</em>, I am building my foundation
+              in full-stack development with a focus on the <em>Java ecosystem</em> and modern JavaScript
+              frameworks. I am driven by a passion for writing clean, purposeful code and creating software
+              that is both functional and intuitive.
+            </p>
+
             <div className="mb-16">
               <h3 className="font-mono text-[10px] tracking-widest uppercase text-[#928f85] mb-6">
                 Technical Stack
@@ -137,7 +147,7 @@ const About = () => {
               <Row className="g-4">
                 {categories.map((cat) => (
                   <Col key={cat.name} md={4}>
-                    <div className="interactive-card h-100 border border-[#e5e1da] rounded-xl p-5 bg-white shadow-sm">
+                    <div className="interactive-card h-100 border border-[#e5e1da] rounded-xl p-5 shadow-sm">
                       <h4 className="font-mono text-[9px] tracking-widest uppercase text-[#928f85] mb-4 border-b pb-2">
                         {cat.name}
                       </h4>
@@ -154,40 +164,33 @@ const About = () => {
               </Row>
             </div>
 
-            {/* Certifications Grid Layout */}
-            <div className="mb-16">
+            <div>
               <h3 className="font-mono text-[10px] tracking-widest uppercase text-[#928f85] mb-6">
                 Certifications
               </h3>
-              <Row className="g-4">
+              <div className="d-flex flex-column gap-4">
                 {certifications.map((cert, index) => (
-                  <Col key={index} md={6} lg={4}>
-                    <a href={cert.link} target="_blank" rel="noreferrer" className="cert-link">
-                      <div className="interactive-card h-100 border border-[#e5e1da] rounded-xl p-4 bg-white shadow-sm d-flex flex-column">
-                        <div className="cert-container border">
-                          <Image 
-                            src={cert.image} 
-                            alt={cert.title} 
-                            className="cert-image"
-                          />
-                        </div>
-                        <div className="flex-grow-1">
-                          <div className="d-flex justify-content-between align-items-start">
-                            <h4 className="font-serif text-lg text-[#1a1814] mb-1">{cert.title}</h4>
-                            <span className="text-[#928f85]" style={{ fontSize: '14px' }}>↗</span>
-                          </div>
-                          <p className="font-mono text-[9px] uppercase tracking-wider text-[#928f85] mb-2">
-                            {cert.issuer}
-                          </p>
-                          <p className="text-[13px] text-[#5e5b54] mb-0 italic leading-snug">
+                  <a key={index} href={cert.link} target="_blank" rel="noreferrer" className="text-decoration-none">
+                    <div className="interactive-card border border-[#e5e1da] rounded-xl p-4 shadow-sm">
+                      
+                      <div className={`cert-expand-container ${cert.isPortrait ? 'frame-portrait' : 'frame-landscape'}`}>
+                        <Image src={cert.image} alt={cert.title} className="cert-img-full" />
+                      </div>
+
+                      <div className="d-flex justify-content-between align-items-end">
+                        <div>
+                          <h4 className="font-serif text-xl text-[#1a1814] mb-1">{cert.title}</h4>
+                          <p className="font-mono text-[10px] uppercase tracking-widest text-[#928f85] mb-2">{cert.issuer}</p>
+                          <p className="text-[14px] text-[#5e5b54] mb-0 italic leading-relaxed">
                             {cert.detail}
                           </p>
                         </div>
+                        <div className="text-[#928f85] font-serif flex-shrink-0 ms-3">View Full ↗</div>
                       </div>
-                    </a>
-                  </Col>
+                    </div>
+                  </a>
                 ))}
-              </Row>
+              </div>
             </div>
 
           </Col>
