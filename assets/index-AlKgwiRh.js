@@ -26,6 +26,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
           /* Profile Image Hover */
           .profile-img-hover {
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer; /* Indicates it's clickable */
           }
           .profile-img-hover:hover {
             transform: scale(1.08) rotate(2deg);
@@ -41,35 +42,44 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
             transform: translateY(-3px);
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
           }
-        `}),(0,M.jsx)(`div`,{className:`position-absolute top-0 start-0 w-100 h-100`,style:{background:`linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.4), rgba(0,0,0,0.8))`,zIndex:0}}),(0,M.jsx)(nr,{className:`position-relative`,style:{zIndex:1},children:(0,M.jsx)(z,{className:`justify-content-center`,children:(0,M.jsxs)(go,{md:8,lg:6,children:[(0,M.jsx)(`div`,{className:`mb-4 text-center d-flex justify-content-center`,children:(0,M.jsx)(_o,{src:yo,alt:`Kevin Amistad`,roundedCircle:!0,className:`profile-img-hover border border-2 border-secondary shadow-lg object-fit-cover`,style:{width:`180px`,height:`180px`}})}),(0,M.jsx)(`h1`,{className:`display-3 fw-bold mb-3`,children:`Kevin Amistad`}),(0,M.jsxs)(`div`,{className:`d-flex align-items-center justify-content-center mb-4 text-info text-uppercase fw-semibold`,style:{letterSpacing:`0.2rem`,fontSize:`0.9rem`},children:[(0,M.jsx)(`div`,{className:`bg-info me-3`,style:{height:`1px`,width:`30px`}}),`BSIT Student @ University of Baguio`,(0,M.jsx)(`div`,{className:`bg-info ms-3`,style:{height:`1px`,width:`30px`}})]}),(0,M.jsxs)(`p`,{className:`lead text-secondary-emphasis mb-5`,children:[(0,M.jsx)(`span`,{className:`text-white fw-medium`,children:` Aspiring to be in Full-Stack Development and Java Systems`}),`.`]}),(0,M.jsxs)(`div`,{className:`d-flex gap-3 justify-content-center`,children:[(0,M.jsx)(vo,{as:An,to:`/projects`,variant:`light`,size:`lg`,className:`btn-hover-effect rounded-pill px-4 fw-bold`,children:`View Projects`}),(0,M.jsx)(vo,{as:An,to:`/contact`,variant:`outline-light`,size:`lg`,className:`btn-hover-effect rounded-pill px-4 fw-bold`,children:`Contact Me`})]})]})})})]}),So=`/portfolio/assets/efset-BGhqeSEK.png`,V=`/portfolio/assets/introtonet-DRem8COQ.png`,Co=`/portfolio/assets/asean-C375vO3c.png`,wo=()=>{let e=[{name:`Frontend`,skills:[`React.js`,`TypeScript`]},{name:`Backend`,skills:[`Java`]},{name:`Database`,skills:[`MongoDB`,`MySQL`]}],t=[{title:`AI Class ASEAN`,issuer:`ASEAN Foundation`,detail:`AI fundamentals and applications in the ASEAN context.`,link:`https://www.aiclassasean.org/profile?popup=0`,image:Co},{title:`Cisco Networking`,issuer:`Cisco Academy`,detail:`Fundamental networking concepts and technologies.`,link:`https://www.netacad.com/certificates/?issuanceId=225d8130-2070-4b60-a786-e8295aa54572`,image:V},{title:`EFSET English`,issuer:`EF Standard`,detail:`Score: 76/100 — C2 Proficient (Advanced English).`,link:`https://cert.efset.org/3QPXi5`,image:So}];return(0,M.jsxs)(`section`,{className:`py-16 bg-[#faf9f6]`,children:[(0,M.jsx)(`style`,{children:`
+        `}),(0,M.jsx)(`div`,{className:`position-absolute top-0 start-0 w-100 h-100`,style:{background:`linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.4), rgba(0,0,0,0.8))`,zIndex:0}}),(0,M.jsx)(nr,{className:`position-relative`,style:{zIndex:1},children:(0,M.jsx)(z,{className:`justify-content-center`,children:(0,M.jsxs)(go,{md:8,lg:6,children:[(0,M.jsx)(`div`,{className:`mb-4 text-center d-flex justify-content-center`,children:(0,M.jsx)(An,{to:`/about`,children:(0,M.jsx)(_o,{src:yo,alt:`Kevin Amistad`,roundedCircle:!0,className:`profile-img-hover border border-2 border-secondary shadow-lg object-fit-cover`,style:{width:`180px`,height:`180px`}})})}),(0,M.jsx)(`h1`,{className:`display-3 fw-bold mb-3`,children:`Kevin Amistad`}),(0,M.jsxs)(`div`,{className:`d-flex align-items-center justify-content-center mb-4 text-info text-uppercase fw-semibold`,style:{letterSpacing:`0.2rem`,fontSize:`0.9rem`},children:[(0,M.jsx)(`div`,{className:`bg-info me-3`,style:{height:`1px`,width:`30px`}}),`BSIT Student @ University of Baguio`,(0,M.jsx)(`div`,{className:`bg-info ms-3`,style:{height:`1px`,width:`30px`}})]}),(0,M.jsxs)(`p`,{className:`lead text-secondary-emphasis mb-5`,children:[(0,M.jsx)(`span`,{className:`text-white fw-medium`,children:` Aspiring to be in Full-Stack Development and Java Systems`}),`.`]}),(0,M.jsxs)(`div`,{className:`d-flex gap-3 justify-content-center`,children:[(0,M.jsx)(vo,{as:An,to:`/projects`,variant:`light`,size:`lg`,className:`btn-hover-effect rounded-pill px-4 fw-bold`,children:`View Projects`}),(0,M.jsx)(vo,{as:An,to:`/contact`,variant:`outline-light`,size:`lg`,className:`btn-hover-effect rounded-pill px-4 fw-bold`,children:`Contact Me`})]})]})})})]}),So=`/portfolio/assets/efset-BGhqeSEK.png`,V=`/portfolio/assets/introtonet-DRem8COQ.png`,Co=`/portfolio/assets/asean-C375vO3c.png`,wo=()=>{let e=[{name:`Frontend`,skills:[`React.js`,`TypeScript`]},{name:`Backend`,skills:[`Java`]},{name:`Database`,skills:[`MongoDB`,`MySQL`]}],t=[{title:`AI Class ASEAN`,issuer:`ASEAN Foundation`,detail:`Comprehensive training on Artificial Intelligence fundamentals and applications within the ASEAN context.`,link:`https://www.aiclassasean.org/profile?popup=0`,image:Co,isPortrait:!1},{title:`Introduction to Networking`,issuer:`Cisco Networking Academy`,detail:`Fundamental networking concepts and technologies.`,link:`https://www.netacad.com/certificates/?issuanceId=225d8130-2070-4b60-a786-e8295aa54572`,image:V,isPortrait:!1},{title:`EFSET English Certificate`,issuer:`EF Standard English Test`,detail:`Score: 76/100 — C2 Proficient (Advanced English).`,link:`https://cert.efset.org/3QPXi5`,image:So,isPortrait:!0}];return(0,M.jsxs)(`section`,{className:`py-16 bg-[#faf9f6]`,children:[(0,M.jsx)(`style`,{children:`
           .interactive-card {
             transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            background: white;
           }
+          
           .interactive-card:hover {
-            transform: translateY(-5px);
             border-color: #cdc9c1 !important;
             box-shadow: 0 10px 20px rgba(0,0,0,0.05) !important;
           }
 
-          .cert-container {
-            height: 180px;
+          /* Fixed the spacing issues for ASEAN/NetAcad */
+          .cert-expand-container {
+            width: 100%;
             overflow: hidden;
             border-radius: 6px;
-            margin-bottom: 15px;
-            background: #fdfdfd;
+            border: 1px solid #e5e1da;
+            transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-bottom: 20px;
+            background: #fff;
           }
 
-          .cert-image {
+          .frame-landscape { height: 160px; }
+          .interactive-card:hover .frame-landscape { height: 420px; }
+
+          .frame-portrait { height: 200px; }
+          .interactive-card:hover .frame-portrait { height: 600px; }
+
+          .cert-img-full {
             width: 100%;
-            height: 100%;
-            object-fit: contain;
-            filter: grayscale(20%);
-            transition: transform 0.5s ease;
+            height: auto;
+            display: block;
+            filter: grayscale(15%);
+            transition: filter 0.4s ease;
           }
 
-          .interactive-card:hover .cert-image {
+          .interactive-card:hover .cert-img-full {
             filter: grayscale(0%);
-            transform: scale(1.05);
           }
 
           .contact-pill {
@@ -92,14 +102,8 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
             background-color: #1a1814;
             color: white;
             border-color: #1a1814;
-            transform: scale(1.05);
           }
-
-          .cert-link {
-            text-decoration: none;
-            color: inherit;
-          }
-        `}),(0,M.jsx)(nr,{children:(0,M.jsx)(z,{className:`justify-content-center`,children:(0,M.jsxs)(go,{lg:11,xl:10,children:[(0,M.jsxs)(`div`,{className:`mb-6`,children:[(0,M.jsx)(`span`,{className:`font-mono text-[10px] tracking-[0.3em] uppercase text-[#928f85]`}),(0,M.jsx)(`h1`,{className:`font-serif text-6xl text-[#1a1814] mt-2 mb-3`,children:`Kevin Amistad`}),(0,M.jsx)(`h2`,{className:`font-serif text-3xl italic text-[#5e5b54] opacity-80 mb-4`,children:`Aspiring Full-Stack Developer`}),(0,M.jsxs)(`div`,{className:`d-flex flex-wrap gap-2`,children:[(0,M.jsx)(`a`,{href:`https://github.com/amistadSIT-kevs`,target:`_blank`,rel:`noreferrer`,className:`contact-pill`,children:`GitHub`}),(0,M.jsx)(`a`,{href:`https://www.linkedin.com/in/kevin-amistad-351085399/`,target:`_blank`,rel:`noreferrer`,className:`contact-pill`,children:`LinkedIn`})]})]}),(0,M.jsx)(`hr`,{className:`border-[#e5e1da] mb-12`}),(0,M.jsxs)(`div`,{className:`mb-16`,children:[(0,M.jsx)(`h3`,{className:`font-mono text-[10px] tracking-widest uppercase text-[#928f85] mb-6`,children:`Technical Stack`}),(0,M.jsx)(z,{className:`g-4`,children:e.map(e=>(0,M.jsx)(go,{md:4,children:(0,M.jsxs)(`div`,{className:`interactive-card h-100 border border-[#e5e1da] rounded-xl p-5 bg-white shadow-sm`,children:[(0,M.jsx)(`h4`,{className:`font-mono text-[9px] tracking-widest uppercase text-[#928f85] mb-4 border-b pb-2`,children:e.name}),(0,M.jsx)(`div`,{className:`d-flex flex-wrap gap-2`,children:e.skills.map(e=>(0,M.jsx)(`span`,{className:`text-[12px] text-[#3a3832] bg-[#f9f8f6] border border-[#e5e1da] rounded px-2 py-1`,children:e},e))})]})},e.name))})]}),(0,M.jsxs)(`div`,{className:`mb-16`,children:[(0,M.jsx)(`h3`,{className:`font-mono text-[10px] tracking-widest uppercase text-[#928f85] mb-6`,children:`Certifications`}),(0,M.jsx)(z,{className:`g-4`,children:t.map((e,t)=>(0,M.jsx)(go,{md:6,lg:4,children:(0,M.jsx)(`a`,{href:e.link,target:`_blank`,rel:`noreferrer`,className:`cert-link`,children:(0,M.jsxs)(`div`,{className:`interactive-card h-100 border border-[#e5e1da] rounded-xl p-4 bg-white shadow-sm d-flex flex-column`,children:[(0,M.jsx)(`div`,{className:`cert-container border`,children:(0,M.jsx)(_o,{src:e.image,alt:e.title,className:`cert-image`})}),(0,M.jsxs)(`div`,{className:`flex-grow-1`,children:[(0,M.jsxs)(`div`,{className:`d-flex justify-content-between align-items-start`,children:[(0,M.jsx)(`h4`,{className:`font-serif text-lg text-[#1a1814] mb-1`,children:e.title}),(0,M.jsx)(`span`,{className:`text-[#928f85]`,style:{fontSize:`14px`},children:`↗`})]}),(0,M.jsx)(`p`,{className:`font-mono text-[9px] uppercase tracking-wider text-[#928f85] mb-2`,children:e.issuer}),(0,M.jsx)(`p`,{className:`text-[13px] text-[#5e5b54] mb-0 italic leading-snug`,children:e.detail})]})]})})},t))})]})]})})})]})},To=[{_id:`local-1`,title:`MG Lab 5`,description:`A lab activity completed as part of my coursework.`,techStack:[`HTML`,`CSS`,`JavaScript`],repoLink:`https://github.com/amistadsit-kevs/MG_LAB5_Amistad`,liveLink:`https://amistadsit-kevs.github.io/MG_LAB5_Amistad/`,category:`Lab Activity`},{_id:`local-2`,title:`Midterm Lab Exam`,description:`A comprehensive layout and design project for my midterm examination.`,techStack:[`React`,`Bootstrap`,`CSS`],repoLink:`https://github.com/amistadsit-kevs/Midterm_Lab_Exam`,liveLink:`https://amistadsit-kevs.github.io/Midterm_Lab_Exam/`,category:`Examination`},{_id:`local-3`,title:`FG Lab 4`,description:`Final Gallery Lab activity focusing on advanced web features.`,techStack:[`React`,`TypeScript`,`CSS`],repoLink:`https://github.com/amistadsit-kevs/FG_LAB4_Amistad`,liveLink:`https://amistadsit-kevs.github.io/FG_LAB4_Amistad/`,category:`Lab Activity`}],Eo=()=>(0,M.jsxs)(nr,{className:`py-5`,children:[(0,M.jsx)(`style`,{children:`
+        `}),(0,M.jsx)(nr,{children:(0,M.jsx)(z,{className:`justify-content-center`,children:(0,M.jsxs)(go,{lg:10,xl:8,children:[(0,M.jsxs)(`div`,{className:`mb-6`,children:[(0,M.jsx)(`span`,{className:`font-mono text-[10px] tracking-[0.3em] uppercase text-[#928f85]`}),(0,M.jsx)(`h1`,{className:`font-serif text-6xl text-[#1a1814] mt-2 mb-3`,children:`Kevin Amistad`}),(0,M.jsx)(`h2`,{className:`font-serif text-3xl italic text-[#5e5b54] opacity-80 mb-4`,children:`Aspiring Full-Stack Developer`}),(0,M.jsxs)(`div`,{className:`d-flex flex-wrap gap-2`,children:[(0,M.jsx)(`a`,{href:`https://github.com/amistadSIT-kevs`,target:`_blank`,rel:`noreferrer`,className:`contact-pill`,children:`GitHub`}),(0,M.jsx)(`a`,{href:`https://www.linkedin.com/in/kevin-amistad-351085399/`,target:`_blank`,rel:`noreferrer`,className:`contact-pill`,children:`LinkedIn`})]})]}),(0,M.jsx)(`hr`,{className:`border-[#e5e1da] mb-10`}),(0,M.jsxs)(`p`,{className:`text-[17px] text-[#5e5b54] leading-relaxed mb-12`,children:[`A dedicated `,(0,M.jsx)(`em`,{children:`BSIT student at the University of Baguio`}),`, I am building my foundation in full-stack development with a focus on the `,(0,M.jsx)(`em`,{children:`Java ecosystem`}),` and modern JavaScript frameworks. I am driven by a passion for writing clean, purposeful code and creating software that is both functional and intuitive.`]}),(0,M.jsxs)(`div`,{className:`mb-16`,children:[(0,M.jsx)(`h3`,{className:`font-mono text-[10px] tracking-widest uppercase text-[#928f85] mb-6`,children:`Technical Stack`}),(0,M.jsx)(z,{className:`g-4`,children:e.map(e=>(0,M.jsx)(go,{md:4,children:(0,M.jsxs)(`div`,{className:`interactive-card h-100 border border-[#e5e1da] rounded-xl p-5 shadow-sm`,children:[(0,M.jsx)(`h4`,{className:`font-mono text-[9px] tracking-widest uppercase text-[#928f85] mb-4 border-b pb-2`,children:e.name}),(0,M.jsx)(`div`,{className:`d-flex flex-wrap gap-2`,children:e.skills.map(e=>(0,M.jsx)(`span`,{className:`text-[12px] text-[#3a3832] bg-[#f9f8f6] border border-[#e5e1da] rounded px-2 py-1`,children:e},e))})]})},e.name))})]}),(0,M.jsxs)(`div`,{children:[(0,M.jsx)(`h3`,{className:`font-mono text-[10px] tracking-widest uppercase text-[#928f85] mb-6`,children:`Certifications`}),(0,M.jsx)(`div`,{className:`d-flex flex-column gap-4`,children:t.map((e,t)=>(0,M.jsx)(`a`,{href:e.link,target:`_blank`,rel:`noreferrer`,className:`text-decoration-none`,children:(0,M.jsxs)(`div`,{className:`interactive-card border border-[#e5e1da] rounded-xl p-4 shadow-sm`,children:[(0,M.jsx)(`div`,{className:`cert-expand-container ${e.isPortrait?`frame-portrait`:`frame-landscape`}`,children:(0,M.jsx)(_o,{src:e.image,alt:e.title,className:`cert-img-full`})}),(0,M.jsxs)(`div`,{className:`d-flex justify-content-between align-items-end`,children:[(0,M.jsxs)(`div`,{children:[(0,M.jsx)(`h4`,{className:`font-serif text-xl text-[#1a1814] mb-1`,children:e.title}),(0,M.jsx)(`p`,{className:`font-mono text-[10px] uppercase tracking-widest text-[#928f85] mb-2`,children:e.issuer}),(0,M.jsx)(`p`,{className:`text-[14px] text-[#5e5b54] mb-0 italic leading-relaxed`,children:e.detail})]}),(0,M.jsx)(`div`,{className:`text-[#928f85] font-serif flex-shrink-0 ms-3`,children:`View Full ↗`})]})]})},t))})]})]})})})]})},To=[{_id:`local-1`,title:`MG Lab 5`,description:`A lab activity completed as part of my coursework.`,techStack:[`HTML`,`CSS`,`JavaScript`],repoLink:`https://github.com/amistadsit-kevs/MG_LAB5_Amistad`,liveLink:`https://amistadsit-kevs.github.io/MG_LAB5_Amistad/`,category:`Lab Activity`},{_id:`local-2`,title:`Midterm Lab Exam`,description:`A comprehensive layout and design project for my midterm examination.`,techStack:[`React`,`Bootstrap`,`CSS`],repoLink:`https://github.com/amistadsit-kevs/Midterm_Lab_Exam`,liveLink:`https://amistadsit-kevs.github.io/Midterm_Lab_Exam/`,category:`Examination`},{_id:`local-3`,title:`FG Lab 4`,description:`Final Gallery Lab activity focusing on advanced web features.`,techStack:[`React`,`TypeScript`,`CSS`],repoLink:`https://github.com/amistadsit-kevs/FG_LAB4_Amistad`,liveLink:`https://amistadsit-kevs.github.io/FG_LAB4_Amistad/`,category:`Lab Activity`}],Eo=()=>(0,M.jsxs)(nr,{className:`py-5`,children:[(0,M.jsx)(`style`,{children:`
           .project-card {
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
           }
