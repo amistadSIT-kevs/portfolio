@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Container, Table, Button, Card, Badge, Spinner } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for redirection
 
 const Dashboard = () => {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate(); // Initialize navigate
 
   const API_URL = "https://portfolio-api-production-48fa.up.railway.app/api/contact";
 
@@ -23,13 +25,21 @@ const Dashboard = () => {
     fetchMessages();
   }, []);
 
+  // --- LOGOUT FUNCTION ---
+  const handleLogout = () => {
+    // 1. Clear your authentication data (if you're using localStorage or Cookies)
+    // localStorage.removeItem('token'); 
+    
+    // 2. Redirect to the Home or Login page
+    navigate('/'); 
+  };
+
   const handleDelete = async (id: string) => {
     if (window.confirm("Are you sure you want to delete this message?")) {
       try {
         await fetch(`${API_URL}/${id}`, {
           method: 'DELETE',
         });
-        // Refresh the list after deleting
         fetchMessages();
       } catch (error) {
         console.error("Error deleting message:", error);
@@ -49,8 +59,20 @@ const Dashboard = () => {
     <Container className="py-5 mt-5">
       <Card className="shadow-sm border-0 bg-dark text-white p-4">
         <div className="d-flex justify-content-between align-items-center mb-4">
-          <h2 className="fw-bold m-0">Admin Inbox</h2>
-          <Badge bg="info">{messages.length} Messages</Badge>
+          <div className="d-flex align-items-center gap-3">
+            <h2 className="fw-bold m-0">Admin Inbox</h2>
+            <Badge bg="info">{messages.length} Messages</Badge>
+          </div>
+          
+          {/* Logout Button */}
+          <Button 
+            variant="outline-light" 
+            size="sm" 
+            className="rounded-pill px-3"
+            onClick={handleLogout}
+          >
+            Logout
+          </Button>
         </div>
 
         <Table responsive="md" hover variant="dark" className="align-middle">
